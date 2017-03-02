@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map title</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+        #map {
+            height: 60%;
+            width: 60%;
+            margin-top: 10vw;
+            margin: auto;
+        }
+        /* Optional: Makes the sample page fill the window. */
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        //        Koordinaterne, der fortæller hvor de forskellige markers skal være
+        // Lattitude: x-aksen
+        // Longittude: y-aksen
+
+        function initMap() {
+            var myLatLng = {
+                lat: 55.706465,
+                lng: 12.539288
+            };
+            var myLatLng2 = {
+                lat: 55.706412,
+                lng: 12.539212
+            };
+            var myLatLng3 = {
+                lat: 55.707440,
+                lng: 12.537240
+            };
+            var myLatLng4 = {
+                lat: 55.707540,
+                lng: 12.537540
+            };
+            var myLatLng5 = {
+                lat: 55.693466,
+                lng: 12.542782
+            };
+
+
+
+            //        De forskellige markers med deres properties
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16,
+                center: myLatLng
+            });
+
+            var marker = new google.maps.Marker({
+                //                Position referere til var "myLatLng" længere oppe på siden, hvor koordinaterne står
+                position: myLatLng,
+                map: map,
+                title: 'KEA!'
+            });
+            var marker = new google.maps.Marker({
+                position: myLatLng2,
+                map: map,
+                title: 'Marker2!'
+            });
+            var marker = new google.maps.Marker({
+                position: myLatLng3,
+                map: map,
+                title: 'Marker3!'
+            });
+            var marker = new google.maps.Marker({
+                position: myLatLng4,
+                map: map,
+                title: 'Marker4!'
+            });
+            var marker = new google.maps.Marker({
+                position: myLatLng5,
+                map: map,
+                title: 'Jægersborggade'
+            });
+
+        }
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnFl9bQAehgWyNosRebn9WVE5KNwryAns&callback=initMap">
+
+
+    </script>
